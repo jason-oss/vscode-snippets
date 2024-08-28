@@ -1,0 +1,201 @@
+{"Model Base Template": {
+    "prefix": "modelbase",
+    "body": [
+        "threagile_version: 1.0.0",
+        "title: ${1:title}",
+        "date: ${2:}",
+        "author:",
+        "  name: ${3:name}",
+        "  homepage: ${4:}",
+        "management_summary_comment: ${5:}",
+        "business_criticality: ${6:business_criticality}",
+        "business_overview:",
+        "  description: Some more demo text here and even images...",
+        "  images:",
+        "questions:",
+        "abuse_cases:",
+        "  Denial-of-Service: >",
+        "    As a hacker I want to disturb the functionality of the backend system in order to cause indirect financial damage via unusable features.",
+        "  CPU-Cycle Theft: >",
+        "    As a hacker I want to steal CPU cycles in order to transform them into money via installed crypto currency miners.",
+        "  Ransomware: >",
+        "    As a hacker I want to encrypt the storage and file systems in order to demand ransom.",
+        "  Identity Theft: >",
+        "    As a hacker I want to steal identity data in order to reuse credentials and/or keys on other targets of the same company or outside.",
+        "  PII Theft: >",
+        "    As a hacker I want to steal PII (Personally Identifiable Information) data in order to blackmail the company and/or damage their reputation by publishing the stolen data.",
+        "security_requirements:",
+        "  Input Validation: Strict input validation is required to reduce the overall attack surface.",
+        "  EU-GDPR: Mandatory EU-GDPR",
+        "tags_available:",
+        "data_assets:",
+        "technical_assets:",
+        "trust_boundaries:",
+        "shared_runtimes:",
+        "individual_risk_categories:",
+        "risk_tracking:"
+    ],
+    "description": "Template for creating a model base"
+}
+
+
+,"Data Asset Template": {
+    "prefix": "dataasset",
+    "body": [
+        "${1:DataAssetName}:",
+        "  id: ${2:id}",
+        "  description: ${3:description}",
+        "  usage: ${4:usage}",
+        "  tags:",
+        "  origin:",
+        "  owner:",
+        "  quantity: ${5:quantity}",
+        "  confidentiality: ${6:confidentiality}",
+        "  integrity: ${7:integrity}",
+        "  availability: ${8:availability}",
+        "  justification_cia_rating:"
+    ],
+    "description": "Template for defining a data asset"
+}
+
+
+,"Technical Asset Template": {
+    "prefix": "technicalasset",
+    "body": [
+        "${1:TechnicalAssetName}:",
+        "  id: ${2:id}",
+        "  description: ${3:description}",
+        "  type: ${4:type}",
+        "  usage: ${5:usage}",
+        "  used_as_client_by_human: ${6:used_as_client_by_human}",
+        "  out_of_scope: false",
+        "  justification_out_of_scope:",
+        "  size: ${7:size}",
+        "  technology: ${8:technology}",
+        "  tags: ${9:tags}",
+        "  internet: ${10:internet}",
+        "  machine: ${11:machine}",
+        "  encryption: ${12:encryption}",
+        "  owner:",
+        "  confidentiality: ${13:confidentiality}",
+        "  integrity: ${14:integrity}",
+        "  availability: ${15:availability}",
+        "  justification_cia_rating:",
+        "  multi_tenant: ${16:multi_tenant}",
+        "  redundant: ${17:redundant}",
+        "  custom_developed_parts: ${18:custom_developed_parts}",
+        "  data_assets_processed:",
+        "  data_assets_stored:",
+        "  data_formats_accepted:",
+        "  communication_links:"
+    ],
+    "description": "Template for defining a technical asset"
+}
+
+
+,"Communication Link Template": {
+    "prefix": "communicationlink",
+    "body": [
+        "${1:CommunicationLinkName}:",
+        "  target: ${2:target_id}",
+        "  description: ${3:description}",
+        "  protocol: ${4:protocol}",
+        "  authentication: ${5:authentication}",
+        "  authorization: ${6:authorization}",
+        "  tags: ${7:tags}",
+        "  vpn: ${8:vpn}",
+        "  ip_filtered: ${9:ip_filtered}",
+        "  readonly: ${10:readonly}",
+        "  usage: ${11:usage}",
+        "  data_assets_sent:",
+        "  data_assets_received:"
+    ],
+    "description": "Template for defining a communication link"
+}
+
+
+,"Trust Boundary Template": {
+    "prefix": "trustboundary",
+    "body": [
+        "${1:TrustBoundaryName}:",
+        "  id: ${2:id}",
+        "  description: ${3:description}",
+        "  type: ${4:type}",
+        "  tags: ${5:tags}",
+        "  technical_assets_inside:",
+        "  trust_boundaries_nested:"
+    ],
+    "description": "Template for defining a trust boundary"
+}
+
+
+
+,"Shared Runtime Template": {
+    "prefix": "sharedruntime",
+    "body": [
+        "${1:SharedRuntimeName}:",
+        "  id: ${2:id}",
+        "  description: ${3:description}",
+        "  tags: ${4:tags}",
+        "  technical_assets_running:"
+    ],
+    "description": "Template for defining a shared runtime"
+}
+
+
+,"Individual Risk Category Template": {
+    "prefix": "riskcategory",
+    "body": [
+        "${1:IndividualRiskCategoryName}:",
+        "  id: ${2:id}",
+        "  description: ${3:description}",
+        "  impact:",
+        "  asvs:",
+        "  cheat_sheet:",
+        "  action:",
+        "  mitigation:",
+        "  check:",
+        "  function: ${4:function}",
+        "  stride: ${5:stride}",
+        "  detection_logic:",
+        "  risk_assessment:",
+        "  false_positives:",
+        "  model_failure_possible_reason: ${6:model_failure_possible_reason}",
+        "  cwe: ${7:cwe}",
+        "  risks_identified:"
+    ],
+    "description": "Template for defining an individual risk category"
+}
+
+
+,"Individual Risk Instance Template": {
+    "prefix": "riskinstance",
+    "body": [
+        "${1:IndividualRiskInstanceName}:",
+        "  severity: ${2:severity}",
+        "  exploitation_likelihood: ${3:exploitation_likelihood}",
+        "  exploitation_impact: ${4:exploitation_impact}",
+        "  data_breach_probability: ${5:data_breach_probability}",
+        "  data_breach_technical_assets:",
+        "  most_relevant_data_asset: ${6:most_relevant_data_asset}",
+        "  most_relevant_technical_asset: ${7:most_relevant_technical_asset}",
+        "  most_relevant_trust_boundary: ${8:most_relevant_trust_boundary}",
+        "  most_relevant_shared_runtime: ${9:most_relevant_shared_runtime}"
+    ],
+    "description": "Template for defining an individual risk instance"
+}
+
+
+,"Risk Tracking Template": {
+    "prefix": "risktracking",
+    "body": [
+        "${1:RiskID}:",
+        "  status: ${2:status}",
+        "  justification: ${3:justification}",
+        "  ticket:",
+        "  date:",
+        "  checked_by:"
+    ],
+    "description": "Template for tracking risks"
+}
+}
